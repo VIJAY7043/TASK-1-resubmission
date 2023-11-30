@@ -1,0 +1,81 @@
+1.Request and Response Multiplexing:
+
+HTTP/1.1: It uses a serial processing model, meaning that only one request can be processed at a time on a single connection. This can lead to head-of-line blocking issues, where a slow-loading resource can delay the loading of subsequent resources.
+HTTP/2: Introduces multiplexing, allowing multiple requests and responses to be processed concurrently over a single connection. This significantly improves the efficiency of data transfer, reducing latency and improving overall performance.
+
+
+2.Header Compression: 
+
+HTTP/1.1: Headers are sent in plaintext with each request and response, leading to redundant data transmission and increased latency.
+HTTP/2: Implements header compression, reducing the overhead associated with headers by using a technique called HPACK. This results in faster data transfer and more efficient use of network resources.
+
+3.Binary Protocol:
+
+HTTP/1.1: It is a text-based protocol, which is human-readable but can be less efficient for machines to process.
+HTTP/2: Adopts a binary protocol, which is more compact and efficient for both machines and humans. This reduces parsing complexity and contributes to faster data transfer.
+
+4.Server Push:
+
+HTTP/1.1: The server cannot proactively send resources to the client without a corresponding request.
+HTTP/2: Introduces server push, allowing the server to send additional resources to the client before they are explicitly requested. This can greatly improve page load times by anticipating and pushing resources that the client is likely to request.
+
+5.Connection Handling:
+
+HTTP/1.1: Requires multiple connections for parallel loading of resources, leading to increased connection overhead.
+HTTP/2: Uses a single, multiplexed connection, reducing the need for multiple connections and mitigating latency issues.
+
+6.Backward Compatibility:
+
+HTTP/1.1: Widely supported and compatible with older systems and browsers.
+HTTP/2: While backward compatible, may require additional configurations and may not be supported by very old systems or browsers.
+
+Conclusion:
+
+HTTP/2 represents a significant improvement over its predecessor, addressing many of the performance limitations of HTTP/1.1. The adoption of HTTP/2 has become widespread, contributing to a faster and more efficient web browsing experience. As technology continues to evolve, it will be interesting to see how future versions of the HTTP protocol further enhance the way we interact with the internet.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+(2)write a blog about objects and internal representaion in javascript?
+
+The Basics of Objects in JavaScript:
+
+At its core, JavaScript is an object-oriented language, and nearly everything in the language is an object or behaves like one. Objects are collections of key-value pairs, where each key is a string (or a symbol) and each value can be any data type, including other objects. This fundamental structure allows developers to model real-world entities and their relationships seamlessly.
+
+Internal Representation of Objects:
+
+1. Properties and Methods:
+
+Properties: In JavaScript objects, properties are essentially variables attached to objects. These properties can hold values of any type, making objects dynamic and adaptable.
+Methods: Functions attached to objects are referred to as methods. They allow objects to perform actions or computations, enhancing the capabilities of the object.
+
+2. Prototypes and Inheritance:
+
+JavaScript follows a prototype-based inheritance model. Objects can inherit properties and methods from other objects, forming a prototype chain.
+The prototype property of an object is a reference to another object from which it inherits properties. This mechanism allows for code reuse and the creation of hierarchies in object structures.
+
+3. Object Creation:
+
+Objects in JavaScript can be created through literal notation, constructor functions, or the Object constructor.
+Modern JavaScript also introduced classes, syntactical sugar over prototype-based inheritance, providing a more familiar syntax for developers coming from other object-oriented languages.
+
+4. Object Descriptors:
+
+Each property of an object is associated with a property descriptor, which defines the attributes of the property, such as whether it's writable, enumerable, or configurable.
+The Object.getOwnPropertyDescriptor() method allows developers to inspect these descriptors.
+
+Optimizations and Under-the-Hood Magic:
+
+1. Hidden Classes and Shape Deoptimization:
+
+JavaScript engines, such as V8 in Chrome, use optimization techniques like hidden classes to speed up property access.
+When the shape of an object changes (e.g., by adding or removing properties), it can lead to deoptimization, impacting performance. Understanding these internals can help developers write more efficient code.
+
+2. Memory Management:
+
+Objects in JavaScript are subject to automatic memory management through garbage collection.
+Developers need to be mindful of memory usage, especially in scenarios where objects are created and discarded frequently.
+
+Conclusion:
+
+Objects lie at the heart of JavaScript's expressive power, enabling developers to create complex and flexible data structures. Understanding the internal representation of objects equips developers with the knowledge to write more efficient and performant code. As you continue your journey in JavaScript, unraveling the mysteries of objects will undoubtedly deepen your grasp of the language and empower you to build more sophisticated and scalable applications.
+------------------------------------------------------------------------------------------------------------------------------------------
+
